@@ -1,0 +1,102 @@
+<h2>DIRECTIVAS</h2>
+
+<div class="container-cards">
+    <div class="carta" appHoverElement>
+        <app-card [title]="'Directive HoverElement'"
+            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+            [texto]="'Esta es una directiva que al pasar el cursor se hace un poco más grande el elemento, se le agrega una sombra y cambia el background color'" />
+    </div>
+
+    <div class="carta" appClickBackground>
+        <app-card [title]="'Directive clickBackground'"
+            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+            [texto]="'Esta es una directiva que si haces click, te cambia el background color a uno random.'" />
+    </div>
+
+    <div class="carta" appHighligh highlightColor="blue" textColor="red">
+        <app-card [title]="'Directive HighlightColor'"
+            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+            [texto]="'Esta es una directiva que al pasar el cursor cambia el color de fondo, en este caso, le estoy pasando los colores por @Input'" />
+    </div>
+
+    <div class="carta" appHighligh>
+        <app-card [title]="'Directive HighlightColor'"
+            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+            [texto]="'Misma directiva anterior, lo único es que sino le paso nada por @Input, pone los valores por defecto definidos la directiva'" />
+    </div>
+
+    <div class="carta" appGradientColor>
+        <app-card [title]="'Directive GradientColor'"
+            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+            [texto]="'Misma carta usada en la api de marvel, se podrían modificar el color del gradiente.'" />
+    </div>
+</div>
+
+<div class="little-card">
+    <div class="carta">
+
+        <h3>Directive PositiveNumber</h3>
+        <p>Esta directiva se asegura de que los valores ingresados son un número positivo, no permite que escribas
+            valores negativos.</p>
+
+        <div class="form-group">
+            <label for="positiveNumber">Input type text: </label>
+            <input type="text" appPositiveNumber>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label for="positiveNumber">Input type number: </label>
+            <input type="number" appPositiveNumber>
+        </div>
+    </div>
+
+    <div class="carta">
+        <h3>Directive ShowHide</h3>
+        <p>Esta directiva se encarga de mostrar u ocultar un mensaje, se maneja mediante un botón, que se encarga de
+            manejar por Input la visibilidad de la directiva.</p>
+
+        <button (click)="toggleVisibility()">
+            {{ showMessage ? 'Ocultar Mensaje' : 'Mostrar Mensaje' }}
+        </button>
+
+        <br />
+
+        <div [appShowHide]="showMessage">
+            Este es un mensaje que se puede mostrar u ocultar.
+        </div>
+    </div>
+
+    <div class="carta">
+        <h3>Directive changeText</h3>
+        <p>Esta directiva se encarga de mostrar cambiar el texto cuando pases el mouse sobre el texto.</p>
+  
+        <p style="border: 1px solid blue;" appChangeText hoverText="¡Texto cambiado al pasar el mouse!">
+          Este es el texto original si pasas el mouse, cambiará.
+        </p>
+    </div>
+
+    <div class="carta">
+        <h3>Directive HighlightOnClick</h3>
+        <p>Esta directiva hace que solo un elemento se ponga en negrita de un color, aplica o quita una clase que está en el scss.</p>
+        <ul>
+          <li appHighlightOnClick>Elemento 1</li>
+          <li appHighlightOnClick>Elemento 2</li>
+          <li appHighlightOnClick>Elemento 3</li>
+          <li appHighlightOnClick>Elemento 4</li>
+        </ul>
+    </div>
+
+    <div class="carta">
+        <h3>Directive HighlightElements</h3>
+        <p>Esta directiva hace que el elemento cambie de grosor con darle click, es una especie de check list.</p>
+        <ul>
+          <li appHighlightElements>Elemento 1</li>
+          <li appHighlightElements>Elemento 2</li>
+          <li appHighlightElements>Elemento 3</li>
+          <li appHighlightElements>Elemento 4</li>
+        </ul>
+    </div>
+    
+</div>

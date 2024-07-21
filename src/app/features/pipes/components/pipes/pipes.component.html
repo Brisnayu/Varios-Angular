@@ -1,0 +1,75 @@
+<h2>PIPES PERSONALIZADAS</h2>
+
+<div class="container">
+    <div class="carta">
+        <h3>Pipe filterList</h3>
+        <p>Esta es una pipe que se encarga de filtrar por los nombres de una lista</p>
+
+        <input type="text" [(ngModel)]="searchText" placeholder="Buscar...">
+
+        <ul>
+            <li *ngFor="let item of cats | filterList: searchText">
+                {{ item.name }} - {{ item.breed }}
+            </li>
+        </ul>
+    </div>
+
+    <div class="carta">
+        <h3>Pipe priceFormat</h3>
+        <p>Agrega el formato de algún precio, en caso de que no se especifique en el html, se pondrá el valor por
+            default que es el simbolo del euro.</p>
+
+        <p>{{ 1234.56 | priceFormat:'$' }}</p>
+        <p>{{ 1234.56 | priceFormat }}</p>
+    </div>
+
+    <div class="carta">
+        <h3>Pipe sort</h3>
+        <p>Devuelve en orden alfabético el listado. En este caso por la propiedad del array .name</p>
+
+        <ul>
+            <li *ngFor="let item of cats2 | sort:'name'">{{ item.name }}</li>
+        </ul>
+
+        
+    </div>
+
+    <div class="carta">
+        <h3>Pipe sort</h3>
+        <p>Devuelve en orden alfabético el listado. En este caso por la propiedad del array .breed</p>
+
+        <ul>
+            <li *ngFor="let item of cats3 | sort:'breed'">{{ item.breed }}</li>
+        </ul>
+    </div>
+
+    <div class="carta">
+        <h3>Pipes angular</h3>
+        <p>Devuelve en orden alfabético el listado. En este caso por la propiedad del array .breed</p>
+
+        <ul>
+            <li>{{ 8736.3982 | number:'1.0-0' }}</li>
+            <li>{{ -3.6 | number:'1.0-0' }}</li>
+            <li>{{ 'LOWERCASE' | lowercase }}</li>
+            <li>{{ 'uppercase' | uppercase }}</li>
+            <li>{{ 'titlecase' | titlecase }}</li>
+            <li>{{ 3445 | currency:'USD' }}</li>
+            <li>{{ 3445 | currency:'EUR' }}</li>
+            <li>{{ '2419' | date:'shortDate' }}</li>
+            <li>{{ '2419' | date:'fullDate' }}</li>
+            <li>{{ 0.80 | percent }}</li>
+            <li>{{ 'Hello World' | slice:0:5 }}</li>
+        </ul>
+    </div>
+
+    <div class="carta">
+        <h3>Pipe Angular keyValue</h3>
+        <p>Se usa para objetos clave valor, es muy útil sino sabemos o tenemos muchos elementos y no tenemos que apuntar las claves.</p>
+
+        <ul>
+            <li *ngFor="let item of cat | keyvalue">{{ item.key }}: {{ item.value }}</li>
+        </ul>
+    </div>
+
+
+</div>
