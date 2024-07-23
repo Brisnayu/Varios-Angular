@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { handleErrorInterceptor } from './interceptors/handleError/handle-error.interceptor';
 import { notificationInterceptor } from './interceptors/notification/notification.interceptor';
+import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
 
 
 
@@ -12,8 +13,7 @@ import { notificationInterceptor } from './interceptors/notification/notificatio
     CommonModule
   ],
   providers: [
-    provideHttpClient(withInterceptors([handleErrorInterceptor])),
-    provideHttpClient(withInterceptors([notificationInterceptor]))
+    provideHttpClient(withInterceptors([handleErrorInterceptor, notificationInterceptor, LoadingInterceptor]))
   ]
 })
 export class CoreModule { }

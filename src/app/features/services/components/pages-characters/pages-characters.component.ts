@@ -22,7 +22,6 @@ export class PagesCharactersComponent implements OnInit {
     if (this.hasMore) {
       this.charactersService.getCharacters(page).subscribe(data => {
         this.characters = data;
-        console.log('hola?')
         this.currentPage = page;
         this.hasMore = data.info.next != null;
       });
