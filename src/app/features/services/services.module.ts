@@ -10,6 +10,7 @@ import { PagesCharactersComponent } from './components/pages-characters/pages-ch
 import { CharactersNumberPageComponent } from './components/characters-number-page/characters-number-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterCharactersComponent } from './components/filter-characters/filter-characters.component';
+import { FilterButtonCharactersComponent } from './components/filter-button-characters/filter-button-characters.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FilterCharactersComponent } from './components/filter-characters/filter
     CharactersComponent,
     PagesCharactersComponent,
     CharactersNumberPageComponent,
-    FilterCharactersComponent
+    FilterCharactersComponent,
+    FilterButtonCharactersComponent
   ],
   imports: [
     CommonModule,

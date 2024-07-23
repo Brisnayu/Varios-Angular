@@ -14,6 +14,7 @@ import { PasswordLengthDirective } from './PasswordLength/password-length.direct
 import { ErrorsInputDirective } from './errorsInput/errors-input.directive';
 import { ErrorMessageDirective } from './errorMessage/error-message.directive';
 import { ErrorMessagePositiveNumberDirective } from './errorMessagePositiveNumber/error-message-positive-number.directive';
+import { ButtonHoverDirective } from './buttonHover/button-hover.directive';
 
 
 
@@ -32,6 +33,7 @@ import { ErrorMessagePositiveNumberDirective } from './errorMessagePositiveNumbe
     ErrorsInputDirective,
     ErrorMessageDirective,
     ErrorMessagePositiveNumberDirective,
+    ButtonHoverDirective,
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { ErrorMessagePositiveNumberDirective } from './errorMessagePositiveNumbe
     PasswordLengthDirective,
     ErrorsInputDirective,
     ErrorMessageDirective,
-    ErrorMessagePositiveNumberDirective
+    ErrorMessagePositiveNumberDirective,
+    ButtonHoverDirective
   ]
 })
 export class DirectivesModule { }

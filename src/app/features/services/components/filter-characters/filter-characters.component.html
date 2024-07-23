@@ -3,18 +3,18 @@
 <input type="text" [(ngModel)]="searchText" placeholder="Buscar...">
 
 
-<div *ngIf="(listCharacters?.results ?? []) | filterList: searchText as filteredResults">
-    <div class="container" *ngIf="filteredResults.length > 0; else noResults">
+    <div *ngIf="(listCharacters?.results ?? []) | filterList: searchText as filteredResults">
+      <div class="container" *ngIf="filteredResults.length > 0; else noResults">
         <div class="carta" appHoverElement *ngFor="let item of filteredResults">
-            <app-card 
+          <app-card 
             [title]="item.name" 
-            [imagenUrl]="item.image" 
+            [imagenUrl]="item.image"
             [texto]="item.species">
-            </app-card>
+          </app-card>
         </div>
+      </div>
     </div>
-</div>
-
+ 
 
 <ng-template #noResults>
     <p style="color: red;">No se encontraron personajes.</p>

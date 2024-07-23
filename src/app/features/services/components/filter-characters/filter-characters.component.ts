@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { GetCharacters } from '../../../../core/services/getCharacters/getCharacters.service';
 import { RootObject } from '../../../../core/interfaces/characters';
 
@@ -7,7 +7,7 @@ import { RootObject } from '../../../../core/interfaces/characters';
   templateUrl: './filter-characters.component.html',
   styleUrl: './filter-characters.component.scss'
 })
-export class FilterCharactersComponent {
+export class FilterCharactersComponent implements OnInit {
   private charactersService = inject(GetCharacters)
   public listCharacters!: RootObject;
   public searchText: string = '';

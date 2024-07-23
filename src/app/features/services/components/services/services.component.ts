@@ -24,4 +24,8 @@ export class ServicesComponent {
   goToFilterPage(): void {
     this.router.navigate(['services/filterCharacters'])
   }
+
+  goToFilterButton(): void {
+    this.router.navigate(['services/filterButtonCharacters'])
+  }
 }

@@ -5,13 +5,15 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { PagesCharactersComponent } from './components/pages-characters/pages-characters.component';
 import { CharactersNumberPageComponent } from './components/characters-number-page/characters-number-page.component';
 import { FilterCharactersComponent } from './components/filter-characters/filter-characters.component';
+import { FilterButtonCharactersComponent } from './components/filter-button-characters/filter-button-characters.component';
 
 const routes: Routes = [
   { path: '', component: ServicesComponent },
   { path: 'characters', component: CharactersComponent },
   { path: 'pagesCharacters', component: PagesCharactersComponent },
   { path: 'numberCharacters', component: CharactersNumberPageComponent},
-  { path: 'filterCharacters', component: FilterCharactersComponent } 
+  { path: 'filterCharacters', component: FilterCharactersComponent },
+  { path: 'filterButtonCharacters', component: FilterButtonCharactersComponent }  
 ];
 
 @NgModule({

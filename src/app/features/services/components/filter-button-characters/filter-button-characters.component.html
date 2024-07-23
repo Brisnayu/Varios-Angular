@@ -1,0 +1,20 @@
+<p>Probando la pipe para filtrar pero ahora solamente sirve cuando le doy click al botón</p>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Buscar...">
+<button appButtonHover (click)="filterCharacters()">Buscar</button>
+
+<div *ngIf="filteredResults.length > 0; else noResults">
+  <div class="container">
+    <div class="carta" appHoverElement *ngFor="let item of filteredResults">
+      <app-card 
+        [title]="item.name" 
+        [imagenUrl]="item.image" 
+        [texto]="item.species">
+      </app-card>
+    </div>
+  </div>
+</div>
+
+<ng-template #noResults>
+  <p style="color: red;">No se encontraron personajes.</p>
+</ng-template>
