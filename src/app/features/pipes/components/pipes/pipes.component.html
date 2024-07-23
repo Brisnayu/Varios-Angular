@@ -1,6 +1,7 @@
 <h2>PIPES PERSONALIZADAS</h2>
 
 <div class="container">
+
     <div class="carta">
         <h3>Pipe filterList</h3>
         <p>Esta es una pipe que se encarga de filtrar por los nombres de una lista</p>
@@ -28,10 +29,10 @@
         <p>Devuelve en orden alfabético el listado. En este caso por la propiedad del array .name</p>
 
         <ul>
-            <li *ngFor="let item of cats2 | sort:'name'">{{ item.name }}</li>
+            <li *ngFor="let item of cats | sort:'name'">{{ item.name }}</li>
         </ul>
 
-        
+
     </div>
 
     <div class="carta">
@@ -64,12 +65,40 @@
 
     <div class="carta">
         <h3>Pipe Angular keyValue</h3>
-        <p>Se usa para objetos clave valor, es muy útil sino sabemos o tenemos muchos elementos y no tenemos que apuntar las claves.</p>
+        <p>Se usa para objetos clave valor, es muy útil sino sabemos o tenemos muchos elementos y no tenemos que apuntar
+            las claves.</p>
 
         <ul>
             <li *ngFor="let item of cat | keyvalue">{{ item.key }}: {{ item.value }}</li>
         </ul>
     </div>
 
+</div>
+
+<div class="container">
+    <div class="carta">
+        <h3>Pipe errorMessage</h3>
+        <p>Forma de validar los formularios cuando interactuas con el pero en forma de pipe</p>
+
+        <form [formGroup]="form" novalidate>
+            <div>
+                <label for="email">Email: </label>
+                <input id="email" formControlName="email" />
+                <div *ngIf="form.get('email')?.dirty && getControlErrors('email') as errors">
+                    <span style="color: red;">{{ errors | errorMessage: 'email' }}</span>
+                </div>
+            </div>
+
+            <div>
+                <label for="password">Password: </label>
+                <input id="password" formControlName="password" type="password" />
+                <div *ngIf="form.get('password')?.dirty && getControlErrors('password') as errors">
+                    <span style="color: red;">{{ errors | errorMessage: 'password' }}</span>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
 
 </div>

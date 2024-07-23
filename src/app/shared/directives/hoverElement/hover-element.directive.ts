@@ -5,7 +5,13 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 })
 export class HoverElementDirective {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+    this.setInitialStyles();
+  }
+
+  private setInitialStyles() {
+    this.renderer.setStyle(this.el.nativeElement, 'transition', 'all 0.3s ease-in-out');
+  }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.setHoverEffect(true);
@@ -20,12 +26,10 @@ export class HoverElementDirective {
       this.renderer.setStyle(this.el.nativeElement, 'boxShadow', '0px 4px 8px rgba(0,0,0,0.3)');
       this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', '#f5f5f5');
       this.renderer.setStyle(this.el.nativeElement, 'transform', 'scale(1.01)');
-      this.renderer.setStyle(this.el.nativeElement, 'transition', 'all 0.3s ease-in-out');
     } else {
       this.renderer.removeStyle(this.el.nativeElement, 'boxShadow');
       this.renderer.removeStyle(this.el.nativeElement, 'transform');
       this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'transparent');
-      this.renderer.setStyle(this.el.nativeElement, 'transition', 'all 0.3s ease-in-out');
     }
   }
 

@@ -2,8 +2,7 @@
 
 <div class="container-cards">
     <div class="carta" appHoverElement>
-        <app-card [title]="'Directive HoverElement'"
-            [imagenUrl]="'https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2l0dGVufGVufDB8fDB8fHww'"
+        <app-card [title]="'Directive HoverElement'" [imagenUrl]="'./assets/hera.jpeg'"
             [texto]="'Esta es una directiva que al pasar el cursor se hace un poco más grande el elemento, se le agrega una sombra y cambia el background color'" />
     </div>
 
@@ -71,20 +70,21 @@
     <div class="carta">
         <h3>Directive changeText</h3>
         <p>Esta directiva se encarga de mostrar cambiar el texto cuando pases el mouse sobre el texto.</p>
-  
+
         <p style="border: 1px solid blue;" appChangeText hoverText="¡Texto cambiado al pasar el mouse!">
-          Este es el texto original si pasas el mouse, cambiará.
+            Este es el texto original si pasas el mouse, cambiará.
         </p>
     </div>
 
     <div class="carta">
         <h3>Directive HighlightOnClick</h3>
-        <p>Esta directiva hace que solo un elemento se ponga en negrita de un color, aplica o quita una clase que está en el scss.</p>
+        <p>Esta directiva hace que solo un elemento se ponga en negrita de un color, aplica o quita una clase que está
+            en el scss.</p>
         <ul>
-          <li appHighlightOnClick>Elemento 1</li>
-          <li appHighlightOnClick>Elemento 2</li>
-          <li appHighlightOnClick>Elemento 3</li>
-          <li appHighlightOnClick>Elemento 4</li>
+            <li appHighlightOnClick>Elemento 1</li>
+            <li appHighlightOnClick>Elemento 2</li>
+            <li appHighlightOnClick>Elemento 3</li>
+            <li appHighlightOnClick>Elemento 4</li>
         </ul>
     </div>
 
@@ -92,11 +92,89 @@
         <h3>Directive HighlightElements</h3>
         <p>Esta directiva hace que el elemento cambie de grosor con darle click, es una especie de check list.</p>
         <ul>
-          <li appHighlightElements>Elemento 1</li>
-          <li appHighlightElements>Elemento 2</li>
-          <li appHighlightElements>Elemento 3</li>
-          <li appHighlightElements>Elemento 4</li>
+            <li appHighlightElements>Elemento 1</li>
+            <li appHighlightElements>Elemento 2</li>
+            <li appHighlightElements>Elemento 3</li>
+            <li appHighlightElements>Elemento 4</li>
         </ul>
     </div>
+
+    <div class="carta">
+
+        <h3>Directive PasswordLengthDirective</h3>
+        <p>Va leyendo el número de caracteres y cambia el color de fondo del input.</p>
+
+        <label>Soy el label: </label>
+        <input type="password" appPasswordLength />
+
+    </div>
+
+</div>
+
+
+
+<div class="little-card">
     
+    <div class="carta">
+        <h3>Directivas Estructurales</h3>
+        <p>Para cambiar según el evento del botón.</p>
+        
+        <button (click)="condition=!condition">Click</button>
+        <br><br>
+        <div [ngClass]="{'change-background': condition, 'change-color': !condition}">
+            div para directiva ngClass
+        </div>
+        
+        
+    </div>
+    
+    <div class="carta">
+        <h3>Directivas Estructurales</h3>
+        <p>Usando solamente ngStyle para el cambio de los estilos.</p>
+        
+        <div [ngStyle]="{'background': 'red', 'color': 'black', 'border': '1px solid yellow'}">
+            div para directiva ngStyle
+        </div>
+    </div>
+    
+    <div class="carta">
+        <h3>Directivas Estructurales</h3>
+        <p>Cambia el valor en tiempo real al escribir en el input. Además tiene un valor por defecto que se introduce al
+            darle click al botón.</p>
+            
+            <button (click)="changeName()">Cambiar Nombre</button>
+            <br><br>
+            <input name="First Name" [(ngModel)]="firstName" />
+        <br><br>
+        <span>Valor: <b>{{firstName}}</b></span>
+    </div>
+    
+</div>
+
+
+<div class="little-card">
+
+    <div class="carta">
+        <h3>Directive ErrorsInput</h3>
+        <p>Da un mensaje en rojo hasta que el valor es correcto.</p>
+
+        <form [formGroup]="myForm">
+            <div>
+                <label for="name">Nombre: </label>
+                <input id="name" formControlName="name" type="text">
+                <span appErrorsInput [errors]="formControls['name'].errors" [color]="'red'"></span>
+            </div>
+
+            <div>
+                <label for="email">Correo Electrónico: </label>
+                <input id="email" formControlName="email" type="email">
+                <span appErrorsInput [errors]="formControls['email'].errors" [color]="'red'"></span>
+            </div>
+
+            <button type="submit" [disabled]="myForm.invalid">Enviar</button>
+        </form>
+    </div>
+
+    <app-form-directive />
+
 </div>

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PipesRoutingModule } from './pipes-routing.module';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { SharedModule } from '../../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     PipesRoutingModule,
     SharedModule,
   ]

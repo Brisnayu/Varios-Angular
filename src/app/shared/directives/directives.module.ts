@@ -10,6 +10,10 @@ import { HighlighDirective } from './highligh/highligh.directive';
 import { HighlightElementsDirective } from './highlightElements/highlight-elements.directive';
 import { HighlightOnClickDirective } from './highlightOnClick/highlight-on-click.directive';
 import { ShowHideDirective } from './showHide/show-hide.directive';
+import { PasswordLengthDirective } from './PasswordLength/password-length.directive';
+import { ErrorsInputDirective } from './errorsInput/errors-input.directive';
+import { ErrorMessageDirective } from './errorMessage/error-message.directive';
+
 
 
 @NgModule({
@@ -23,6 +27,9 @@ import { ShowHideDirective } from './showHide/show-hide.directive';
     GradientColorDirective,
     HighlightOnClickDirective,
     HighlightElementsDirective,
+    PasswordLengthDirective,
+    ErrorsInputDirective,
+    ErrorMessageDirective,
   ],
   imports: [
     CommonModule,
@@ -37,6 +44,9 @@ import { ShowHideDirective } from './showHide/show-hide.directive';
     GradientColorDirective,
     HighlightOnClickDirective,
     HighlightElementsDirective,
+    PasswordLengthDirective,
+    ErrorsInputDirective,
+    ErrorMessageDirective
   ]
 })
 export class DirectivesModule { }

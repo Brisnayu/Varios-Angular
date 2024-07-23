@@ -1,9 +1,3 @@
-.container-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
 .little-card {
     display: flex;
     flex-direction: row;
@@ -20,30 +14,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     background-color: #fff;
-}
-
-.highlighted {
-    font-weight: bold;
-    color: orangered;
-}
-
-.nameClass {
-    font-weight: bold;
-    color: purple;
-}
-
-li {
-    cursor: pointer;
-    padding: 10px;
-    list-style-type: none;
-}
-
-.change-background {
-    background: red;
-}
-
-.change-color {
-    color: green;
 }
 
 form {

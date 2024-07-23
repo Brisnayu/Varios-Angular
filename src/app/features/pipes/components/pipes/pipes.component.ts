@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pipes',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class PipesComponent {
   searchText: string = '';
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
+
+  getControlErrors(controlName: string) {
+    return this.form.get(controlName)?.errors || null;
+  }
   
   cats: { name: string, breed: string }[] = [
     { name: 'Hera', breed: 'Calicó' },

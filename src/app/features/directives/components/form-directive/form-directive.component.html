@@ -1,0 +1,25 @@
+<div class="carta">
+    <h3>Directive ErrorMessage</h3>
+    <p>Otra manera de validar usando una directiva, en este caso, el mensaje aparece al dar verificar que no tiene el
+        formato adecuado.</p>
+
+    <form [formGroup]="myForm">
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email" />
+            <div style="color: red" *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"
+                [appErrorMessage]="myForm.get('email')?.errors" field="email">
+            </div>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input id="password" type="password" formControlName="password" />
+            <div style="color: red" *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched"
+                [appErrorMessage]="myForm.get('password')?.errors" field="password">
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+</div>

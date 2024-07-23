@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FilterListPipe } from './filterList/filter-list.pipe';
 import { PriceFormatPipe } from './priceFormat/price-format.pipe';
 import { SortPipe } from './sort/sort.pipe';
+import { ErrorMessagePipe } from './errorMessage/error-message.pipe';
 
 
 
@@ -10,7 +11,8 @@ import { SortPipe } from './sort/sort.pipe';
   declarations: [
     FilterListPipe,
     PriceFormatPipe,
-    SortPipe
+    SortPipe,
+    ErrorMessagePipe
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { SortPipe } from './sort/sort.pipe';
   exports: [
     FilterListPipe,
     PriceFormatPipe,
-    SortPipe
+    SortPipe,
+    ErrorMessagePipe
   ]
 })
 export class CustomPipesModule { }
