@@ -13,7 +13,7 @@ export const LoadingInterceptor: HttpInterceptorFn = (req, next) => {
     loadingService.showLoader();
 
     return next(req).pipe(finalize(() => {
-        console.log('OCULTANDO EL LOADING');
+        // console.log('OCULTANDO EL LOADING');
         timer(350).subscribe(() => loadingService.hideLoader())
     }))
 }

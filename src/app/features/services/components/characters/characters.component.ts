@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RootObject } from '../../../../core/interfaces/characters';
 import { GetCharacters } from '../../../../core/services/getCharacters/getCharacters.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -8,7 +9,8 @@ import { GetCharacters } from '../../../../core/services/getCharacters/getCharac
   styleUrl: './characters.component.scss'
 })
 export class CharactersComponent implements OnInit {
-  private charactersService = inject(GetCharacters)
+  private router = inject(Router);
+  private charactersService = inject(GetCharacters);
   public listCharacters!: RootObject;
 
   ngOnInit(): void {
@@ -16,6 +18,11 @@ export class CharactersComponent implements OnInit {
   }
 
   getCharacters(): void {
-    this.charactersService.getAllCharacters().subscribe((characters) =>{console.log(characters), this.listCharacters = characters})
+    this.charactersService.getAllCharacters().subscribe((characters) =>{this.listCharacters = characters})
+  }
+
+  goToCharacterId(id: number): void {
+    console.log("hola", id)
+    this.router.navigate([`services/characters/${id}`])
   }
 }

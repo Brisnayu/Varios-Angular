@@ -3,7 +3,7 @@ export interface RootObject {
     info: Info;
     results: Result[];
 }
-interface Result {
+export interface Result {
     id: number;
     name: string;
     status: string;

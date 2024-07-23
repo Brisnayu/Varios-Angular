@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { catchError, map, Observable, throwError } from "rxjs";
-import { RootObject } from "../../interfaces/characters";
+import { Result, RootObject } from "../../interfaces/characters";
 import { Character } from "../../interfaces/ICharacters";
 
 @Injectable({
@@ -24,7 +24,7 @@ export class GetCharacters {
     getCharactersNumberPage(page: number): Observable<Character[]> {
         let params = new HttpParams().set('page', page.toString())
 
-        return this.http.get<RootObject>(this.baseUrl, { params } ).pipe(
+        return this.http.get<RootObject>(this.baseUrl, { params }).pipe(
             map(response => response.results),
             catchError((error) => {
                 console.log('Error fetching characters: ', error);
@@ -32,5 +32,15 @@ export class GetCharacters {
             })
         );
     }
+
+    getCharactersById(id: number): Observable<Character> {
+        return this.http.get<Result>(`${this.baseUrl}/${id}`).pipe(
+          map((response) => response), 
+          catchError((error) => {
+            console.log('Error fetching characters: ', error);
+            return throwError(() => new Error('Error fetching characters'));
+          })
+        );
+      }
 
 }

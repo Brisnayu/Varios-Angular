@@ -11,6 +11,9 @@ import { CharactersNumberPageComponent } from './components/characters-number-pa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterCharactersComponent } from './components/filter-characters/filter-characters.component';
 import { FilterButtonCharactersComponent } from './components/filter-button-characters/filter-button-characters.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CharactersByIdComponent } from './components/characters/characters-by-id/characters-by-id.component';
+import { MaintenanceComponent } from './components/maintenance/maintenance.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { FilterButtonCharactersComponent } from './components/filter-button-char
     PagesCharactersComponent,
     CharactersNumberPageComponent,
     FilterCharactersComponent,
-    FilterButtonCharactersComponent
+    FilterButtonCharactersComponent,
+    NotFoundComponent,
+    CharactersByIdComponent,
+    MaintenanceComponent
   ],
   imports: [
     CommonModule,

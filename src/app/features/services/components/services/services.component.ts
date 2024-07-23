@@ -7,7 +7,11 @@ import { Router } from '@angular/router';
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
-  private router = inject(Router)
+  private router = inject(Router);
+
+  goToLogin(): void {
+    this.router.navigate(['services/login'])
+  }
 
   goToPage(): void {
     this.router.navigate(['services/characters'])
