@@ -1,0 +1,36 @@
+<p>characters-number-page works!</p>
+
+<div class="character-list">
+
+    <div class="pagination-controls">
+
+        <div class="container-input">
+           <input 
+            appErrorMessagePositiveNumber
+            type="number" 
+            [(ngModel)]="pageNumber"
+            (change)="onPageChange($event)"
+            (invalidNumber)="handleInvalidNumber($event)"
+            min="1"
+            placeholder="Enter page number" 
+            />
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+            
+            <button (click)="loadCharacters(pageNumber)">Load Page</button>
+        </div>
+
+        <div  class="container">
+            <div class="carta" *ngFor="let character of characters">
+                <app-card 
+                [title]="character.name" 
+                [imagenUrl]="character.image"
+                [texto]="character.species" />
+            </div>
+        </div>
+  </div>
+  
+  
+</div>

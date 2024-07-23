@@ -13,6 +13,7 @@ import { ShowHideDirective } from './showHide/show-hide.directive';
 import { PasswordLengthDirective } from './PasswordLength/password-length.directive';
 import { ErrorsInputDirective } from './errorsInput/errors-input.directive';
 import { ErrorMessageDirective } from './errorMessage/error-message.directive';
+import { ErrorMessagePositiveNumberDirective } from './errorMessagePositiveNumber/error-message-positive-number.directive';
 
 
 
@@ -30,6 +31,7 @@ import { ErrorMessageDirective } from './errorMessage/error-message.directive';
     PasswordLengthDirective,
     ErrorsInputDirective,
     ErrorMessageDirective,
+    ErrorMessagePositiveNumberDirective,
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import { ErrorMessageDirective } from './errorMessage/error-message.directive';
     HighlightElementsDirective,
     PasswordLengthDirective,
     ErrorsInputDirective,
-    ErrorMessageDirective
+    ErrorMessageDirective,
+    ErrorMessagePositiveNumberDirective
   ]
 })
 export class DirectivesModule { }

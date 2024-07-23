@@ -18,7 +18,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 1000,
     }),
   ],
   providers: [],

@@ -1,0 +1,19 @@
+<p>Prueba de páginado</p>
+
+<div class="container-buttons">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="!hasMore">Next</button>
+</div>
+
+<p style="text-align: center;">Número de la página: {{ currentPage }}</p>
+
+<div class="container">
+    <div *ngFor="let character of characters?.results" class="carta" appHoverElement>
+        <app-card 
+        [title]="character.name" 
+        [imagenUrl]="character.image"
+        [texto]="character.species"
+        />
+    </div>
+</div>
+
