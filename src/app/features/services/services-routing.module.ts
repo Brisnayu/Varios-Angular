@@ -11,6 +11,7 @@ import { canActivateCharacter } from '../../core/guards/DataGuard/DataCharacterI
 import { maintenanceGuard } from '../../core/guards/MaintenanceGuard/Maintenance.guard';
 import { LoginComponent } from './components/login/login.component';
 import { unsavedChangesGuard } from '../../core/guards/unSavedChanges/unSavedChanges.guard';
+import { CharactersScrollComponent } from './components/characters-scroll/characters-scroll.component';
 
 const routes: Routes = [
   { path: '', component: ServicesComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'numberCharacters', component: CharactersNumberPageComponent, canActivate: [maintenanceGuard] },
   { path: 'filterCharacters', component: FilterCharactersComponent },
   { path: 'filterButtonCharacters', component: FilterButtonCharactersComponent },
+  { path: 'scrollCharacters', component: CharactersScrollComponent }
 ];
 
 @NgModule({

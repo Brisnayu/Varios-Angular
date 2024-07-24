@@ -35,12 +35,18 @@ export class GetCharacters {
 
     getCharactersById(id: number): Observable<Character> {
         return this.http.get<Result>(`${this.baseUrl}/${id}`).pipe(
-          map((response) => response), 
-          catchError((error) => {
-            console.log('Error fetching characters: ', error);
-            return throwError(() => new Error('Error fetching characters'));
-          })
+            map((response) => response),
+            catchError((error) => {
+                console.log('Error fetching characters: ', error);
+                return throwError(() => new Error('Error fetching characters'));
+            })
         );
-      }
+    }
+
+    getCharactersScroll(page: number): Observable<RootObject> {
+        return this.http.get<RootObject>(`${this.baseUrl}?page=${page}`).pipe(
+            map(response => response)
+        );
+    }
 
 }

@@ -112,43 +112,42 @@
 </div>
 
 
-
 <div class="little-card">
-    
+
     <div class="carta">
         <h3>Directivas Estructurales</h3>
         <p>Para cambiar según el evento del botón.</p>
-        
+
         <button (click)="condition=!condition">Click</button>
         <br><br>
         <div [ngClass]="{'change-background': condition, 'change-color': !condition}">
             div para directiva ngClass
         </div>
-        
-        
+
+
     </div>
-    
+
     <div class="carta">
         <h3>Directivas Estructurales</h3>
         <p>Usando solamente ngStyle para el cambio de los estilos.</p>
-        
+
         <div [ngStyle]="{'background': 'red', 'color': 'black', 'border': '1px solid yellow'}">
             div para directiva ngStyle
         </div>
     </div>
-    
+
     <div class="carta">
         <h3>Directivas Estructurales</h3>
         <p>Cambia el valor en tiempo real al escribir en el input. Además tiene un valor por defecto que se introduce al
             darle click al botón.</p>
-            
-            <button (click)="changeName()">Cambiar Nombre</button>
-            <br><br>
-            <input name="First Name" [(ngModel)]="firstName" />
+
+        <button (click)="changeName()">Cambiar Nombre</button>
+        <br><br>
+        <input name="First Name" [(ngModel)]="firstName" />
         <br><br>
         <span>Valor: <b>{{firstName}}</b></span>
     </div>
-    
+
 </div>
 
 
@@ -176,5 +175,22 @@
     </div>
 
     <app-form-directive />
+
+</div>
+
+<div class="little-card">
+
+    <div class="carta">
+        <h3>Directive TruncateText</h3>
+        <p>Le tienes que pasar un número para que pueda mostrar el número de filas.</p>
+
+        <p appTrucatedText [numberOfRow]="2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+            Cras venenatis euismod malesuada.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+            Cras venenatis euismod malesuada.
+        </p>
+
+    </div>
 
 </div>

@@ -14,6 +14,7 @@ import { FilterButtonCharactersComponent } from './components/filter-button-char
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CharactersByIdComponent } from './components/characters/characters-by-id/characters-by-id.component';
 import { MaintenanceComponent } from './components/maintenance/maintenance.component';
+import { CharactersScrollComponent } from './components/characters-scroll/characters-scroll.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MaintenanceComponent } from './components/maintenance/maintenance.compo
     FilterButtonCharactersComponent,
     NotFoundComponent,
     CharactersByIdComponent,
-    MaintenanceComponent
+    MaintenanceComponent,
+    CharactersScrollComponent
   ],
   imports: [
     CommonModule,

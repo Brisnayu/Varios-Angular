@@ -1,11 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+interface ValidationErrors {
+  required?: boolean;
+  minlength?: { requiredLength: number };
+  email?: boolean;
+  [key: string]: any; //ES MEJOR TENERLO TODO TIPADO EN LUGAR DE USAR UN ANY
+}
+
 @Pipe({
   name: 'errorMessage'
 })
 export class ErrorMessagePipe implements PipeTransform {
 
-  transform(errors: { [key: string]: any } | null, field: string): string {
+  transform(errors: ValidationErrors | null, field: string): string {
     if (!errors) return '';
 
     if (errors['required']) {

@@ -1,0 +1,11 @@
+<p>Probando el scroll infinito</p>
+
+<div class="container">
+
+   <div class="carta" appHoverElement *ngFor="let item of listCharacters?.results">
+        <app-card 
+        [title]="item.name" 
+        [imagenUrl]="item.image"
+        [texto]="item.species" />
+    </div> 
+</div>

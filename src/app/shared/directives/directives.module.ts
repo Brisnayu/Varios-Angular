@@ -15,6 +15,7 @@ import { ErrorsInputDirective } from './errorsInput/errors-input.directive';
 import { ErrorMessageDirective } from './errorMessage/error-message.directive';
 import { ErrorMessagePositiveNumberDirective } from './errorMessagePositiveNumber/error-message-positive-number.directive';
 import { ButtonHoverDirective } from './buttonHover/button-hover.directive';
+import { TrucatedTextDirective } from './trucatedText/trucated-text.directive';
 
 
 
@@ -34,6 +35,7 @@ import { ButtonHoverDirective } from './buttonHover/button-hover.directive';
     ErrorMessageDirective,
     ErrorMessagePositiveNumberDirective,
     ButtonHoverDirective,
+    TrucatedTextDirective,
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,8 @@ import { ButtonHoverDirective } from './buttonHover/button-hover.directive';
     ErrorsInputDirective,
     ErrorMessageDirective,
     ErrorMessagePositiveNumberDirective,
-    ButtonHoverDirective
+    ButtonHoverDirective,
+    TrucatedTextDirective
   ]
 })
 export class DirectivesModule { }

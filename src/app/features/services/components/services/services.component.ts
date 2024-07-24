@@ -32,4 +32,9 @@ export class ServicesComponent {
   goToFilterButton(): void {
     this.router.navigate(['services/filterButtonCharacters'])
   }
+
+  goToScrollCharacters(): void {
+    this.router.navigate(['services/scrollCharacters'])
+  }
+
 }
