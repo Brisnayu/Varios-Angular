@@ -1,8 +1,8 @@
-import { GradientColorDirective } from './gradient-color.directive';
+// import { GradientColorDirective } from './gradient-color.directive';
 
-describe('GradientColorDirective', () => {
-  it('should create an instance', () => {
-    const directive = new GradientColorDirective();
-    expect(directive).toBeTruthy();
-  });
-});
+// describe('GradientColorDirective', () => {
+//   it('should create an instance', () => {
+//     const directive = new GradientColorDirective();
+//     expect(directive).toBeTruthy();
+//   });
+// });

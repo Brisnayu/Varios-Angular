@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'characters', component: CharactersComponent },
   { path: 'characters/:id', component: CharactersByIdComponent, canActivate: [canActivateCharacter] },
   { path: 'pagesCharacters', component: PagesCharactersComponent },
-  { path: 'numberCharacters', component: CharactersNumberPageComponent, canActivate: [maintenanceGuard] },
+  { path: 'numberCharacters', component: CharactersNumberPageComponent, },
   { path: 'filterCharacters', component: FilterCharactersComponent },
   { path: 'filterButtonCharacters', component: FilterButtonCharactersComponent },
   { path: 'scrollCharacters', component: CharactersScrollComponent }
